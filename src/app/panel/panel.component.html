@@ -1,0 +1,24 @@
+<mat-card class="example-card" (click)="openDialog()">
+  <div *ngIf="this.city != null" 
+  [ngStyle]="{'background-image':'url(' + this.icon + ')', 'background-repeat': 'no-repeat',
+  'background-position': 'center center', 'background-size': '100px 100px'}">
+    <mat-card-header>
+      <mat-card-title style="font-size: 24px;">
+        <b>City: {{ this.city }}</b>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="font-size: 18px;">
+      <ul>
+        <li *ngIf="this.description != null">Description: {{ this.description }}</li>
+        <li *ngIf="this.temp != null">Temperature: {{ this.temp }} Celcius degree</li>
+        <li *ngIf="this.humidity != null">Humidity: {{ this.humidity }}%</li>
+        <li *ngIf="this.visibility != null">Visibility: {{ this.visibility }} meters</li>
+        <li *ngIf="this.pressure != null">Pressure: {{ this.pressure }} hPa</li>
+        <li *ngIf="this.windSpeed !== null">Wind speed: {{ this.windSpeed }} m/s</li>
+      </ul>
+    </mat-card-content>
+  </div>
+  <div *ngIf="this.city == null" class="default-panel">
+    <i class="material-icons icon">add_circle</i>
+  </div>
+</mat-card>
